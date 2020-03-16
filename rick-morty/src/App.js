@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
+import RMCard from './RMCard'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+
+  constructor(props){
+    super(props)
+    this.state = {
+      characters: [],
+      isLoading: true,
+    }
+  }
+  
+  componentDidMount(){
+    fetch(`https://rickandmortyapi.com/api/character/${[...Array(494).keys()]}`)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoading: false,
+          characters: json,
+        }
+       
+        )
+      })
+
+  }
+
+  
+
+    render(){
+      var {isLoading, characters} = this.state;
+      console.log(characters);
+      if(isLoading){
+        return <div>LOADING...</div>
+      } else{
+
+      
+        return(
+          <div className="App">
+            {characters.map((ch) => (
+              <RMCard id= {ch.id} name={ch.name} img= {ch.image}/>
+            ))}
+          </div>
+        )
+      }
+  }
 }
 
 export default App;
