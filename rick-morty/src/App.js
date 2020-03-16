@@ -21,14 +21,10 @@ class App extends React.Component{
         this.setState({
           isLoading: false,
           characters: json,
-        }
-       
+          }
         )
       })
-
-  }
-
-  
+    }
 
     render(){
       var {isLoading, characters} = this.state;
@@ -39,11 +35,16 @@ class App extends React.Component{
 
       
         return(
+        <section className="App-Home">
+          <nav>
+            <h1> The Rick And Morty </h1>
+          </nav>
           <div className="App">
             {characters.map((ch) => (
               <RMCard id= {ch.id} name={ch.name} img= {ch.image}/>
             ))}
           </div>
+        </section>
         )
       }
   }
