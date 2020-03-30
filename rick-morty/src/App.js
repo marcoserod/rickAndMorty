@@ -1,53 +1,31 @@
 import React from 'react';
-import RMCard from './RMCard'
-
 import './App.css';
+import Home from './components/home/Home'
+import Header from './components/header/Header'
+import RMCardDetail from './components/rmcard/RMCardDetail'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 
 class App extends React.Component{
 
-
-  constructor(props){
-    super(props)
-    this.state = {
-      characters: [],
-      isLoading: true,
-    }
-  }
   
-  componentDidMount(){
-    fetch(`https://rickandmortyapi.com/api/character/${[...Array(494).keys()]}`)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoading: false,
-          characters: json,
-          }
-        )
-      })
-    }
-
-    render(){
-      var {isLoading, characters} = this.state;
-      console.log(characters);
-      if(isLoading){
-        return <div>LOADING...</div>
-      } else{
-
-      
+    render(){      
         return(
-        <section className="App-Home">
-          <nav>
-            <h1> The Rick And Morty </h1>
-          </nav>
-          <div className="App">
-            {characters.map((ch) => (
-              <RMCard id= {ch.id} name={ch.name} img= {ch.image}/>
-            ))}
-          </div>
-        </section>
+          <Router>
+            <Header text="The Rick and Morty" />
+              <Route path="/" exact component={Home}/>
+              <Route path="/:id" exact component={RMCardDetail}/>
+          </Router>
         )
       }
   }
-}
+
+
 
 export default App;

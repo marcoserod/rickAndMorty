@@ -1,9 +1,59 @@
+
 .App {
+
   text-align: center;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: rgb(32, 35, 41);
+  background-color: #282221;
 }
+
+.App *{
+  text-decoration: none;
+}
+
+.App-header {
+  width: 100vh;
+  height: 15vh;
+  display: flex;
+  background-color: #EEEFF2;
+  padding: 0px 0px 0px 2.1%;
+  width: 100%;
+  box-sizing: border-box;
+
+
+}
+
+.App-header-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: black;
+  
+}
+
+.App-header-links *{
+  text-decoration: none;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  transition: all 0.1s;
+}
+.App-header-links *:visited{
+  color:Black;
+}
+
+.App-header-links *:hover{
+  
+  color: orange;
+  
+}
+
+.App-header-links *:focus{
+  
+  color: orange;
+  
+}
+
 
 
