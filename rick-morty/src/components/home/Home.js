@@ -1,6 +1,7 @@
 import React from 'react';
 import RMCard from '../rmcard/RMCard';
 import {Link} from 'react-router-dom';
+import RMCardDetail from '../rmcard/RMCardDetail';
 
 
 
@@ -27,6 +28,7 @@ class Home extends React.Component{
       }
   
       render(){
+        
         var {isLoading, characters} = this.state;
         console.log("aca")
         console.log(characters);
@@ -36,21 +38,17 @@ class Home extends React.Component{
   
         
           return(
-          <section className="App-Home">
-            
-         
-            <div className="App">
+          <section className="App">
               {characters.map((ch) => (
                 <Link to={`/${ch.id}`}>
-                  <RMCard id= {ch.id} name={ch.name} img= {ch.image} />
+                  <RMCard className="Big" id= {ch.id} name={ch.name} img= {ch.image} />
                 </Link>
               ))}
-            </div>
           </section>
           )
         }
     }
   }
   
-  
+
   export default Home;

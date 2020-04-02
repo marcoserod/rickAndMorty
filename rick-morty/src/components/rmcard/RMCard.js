@@ -8,9 +8,7 @@ import './RMCard.css';
           return(
             <div className="Card">
               <h1 className="Card-Name">{this.props.name}</h1>
-              <div className="Card-Img">
-                <img id="img" src={this.props.img} alt={this.props.name}/>
-              </div>
+              <img className="Card-Img" src={this.props.img} alt={this.props.name}/>
             </div>
           ) 
       };

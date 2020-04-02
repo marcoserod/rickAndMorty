@@ -19,8 +19,10 @@ class App extends React.Component{
         return(
           <Router>
             <Header text="The Rick and Morty" />
-              <Route path="/" exact component={Home}/>
-              <Route path="/:id" exact component={RMCardDetail}/>
+              <Switch>
+                <Route path="/" exact component={Home}/>
+                <Route path="/:id" exact component={RMCardDetail}/>
+              </Switch>
           </Router>
         )
       }

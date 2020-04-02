@@ -2,37 +2,36 @@
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: rgb(51, 51, 51);
     width: 270px;
-    height: 380px;
-    padding: 10px;
-    margin: 1rem;
+    min-height: 380px;
+    padding: 1rem;
     box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
     box-sizing: border-box;
-    text-decoration: none;
+    justify-content: center;
+    align-content: space-between;   
+    margin:1rem 0px 1rem 0px;
  
 }
 
-.Card-Name{
+.Card.Big{
+    width: 150%;
+    height:150%
+}
+
+.Card-Name{ 
     color: white;
     text-decoration: none;
+    margin:2rem 0px 0px 0px;
+    align-self: flex-end;
 }
 .Card-Img{
-    display:flex;
-    width: inherit;
-    
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-#img{
-
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
+    border-radius: 5px;    
     border: 1px solid #EEEFF2;
+    width: 95%;
+    height: 95%;
+    align-self: center;
 
 }
 
@@ -46,31 +45,48 @@
     justify-content: center;
     align-items: center;
     background-color: #282221;
-    height: 85vh;
-    box-sizing: border-box;
+    min-height: 90vh;
+    height: 100%;
 }
+
+
 .RMCardDetail-Table{
+    border-radius: 10px;
+    background-color: rgb(51, 51, 51);
+    padding: 10px;
+    margin: 1rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    box-sizing: border-box;
+    text-decoration: none;
     color: white;
-    background-color:rgb(51, 51, 51);
-    min-width: 270px;
     height: 380px;
-    border-radius: 5px;
 }
+
+.RMCardDetail-Table.Big{
+    height: 1000%
+}
+
 
 .RMCardDetail-Table  *{
     border: 1px solid white;
     border-radius: 5px;
+    
 }
 
 .RMCardDetail-Table tr td:first-child{
     font-weight: bold;
+    border: 1px solid black;
     text-transform: uppercase;
     background-color: #EEEFF2;
     color: black;
-    width: fit-content;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    min-width: fit-content;
+    
 }
 
 .RMCardDetail-Table tr td:last-child{
     text-align: center;
 }
+
 
