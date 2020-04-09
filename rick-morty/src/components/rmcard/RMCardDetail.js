@@ -1,13 +1,14 @@
 import React from "react";
 import RMCard from './RMCard'
 import './RMCard.css';
+import Loader from '../loader/Loader';
 
 
 class RMCardDetail extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            isLoading: false,
+            isLoading: true,
             item: {},
             origin: {},
 
@@ -20,20 +21,23 @@ class RMCardDetail extends React.Component{
           .then(res => res.json())
           .then(json => {
             this.setState({
+              isLoading: false,
               item: json,
               origin: json.origin
               }
             )
           })
+        
         }
+        
         
       render(){   
         const i = this.state.item;
         const l = this.state.isLoading;
         const o = this.state.origin;
-        
+        console.log(i);
         if (l){
-            return <div>LOADING...</div>
+            return <Loader/>
             } else {
                 return(
                 
@@ -73,7 +77,7 @@ class RMCardDetail extends React.Component{
                                 </tr>
                                 <tr>
                                     <td>origin</td>
-                                    <td>{o.name}</td>
+                                    <td>{i.origin.name}</td>
                                 </tr>
                                 <tr>
                                     <td>location</td>
@@ -82,6 +86,8 @@ class RMCardDetail extends React.Component{
                             </tbody>    
                         </table>
                     </div>
+                    {document.querySelector("#home").classList.remove("selected")}
+                    {document.querySelector("#chdetail").classList.add("selected")}
                 </section>
                 )
             }

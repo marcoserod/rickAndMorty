@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
  
 const Header = (props) => {
   return (
@@ -14,12 +14,28 @@ const Header = (props) => {
         <Link to="/">
           <li id="home">HOME</li>
         </Link>
-        <Link>
-          <li id="chdetail">CHARACTER DETAIL</li>
+        <Link to={`${useLocation().pathname}`}>
+          {useLocation().pathname != "/" ?
+          <li id="chdetail">CHARACTER DETAIL</li> : <li></li>}
+          {console.log("path")}
+          {console.log(useLocation().pathname)}
         </Link>
-        
-        
       </ul>
+      <div className="Filters">
+          <select className="select-css" id="gender">
+            <option value="">gender</option>
+            <option value="female">female</option>
+            <option value="male">male</option>
+            <option value="genderless">genderless</option>
+            <option value="unknown">unknown</option> 
+          </select>
+          <select className="select-css" id="status">
+            <option value="">status</option>
+            <option value="alive">alive</option>
+            <option value="dead">dead</option>
+            <option value="unkown">unkwon</option>
+          </select>
+        </div>
     </header>
   );
 };

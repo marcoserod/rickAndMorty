@@ -1,7 +1,7 @@
 import React from 'react';
 import RMCard from '../rmcard/RMCard';
 import {Link} from 'react-router-dom';
-import RMCardDetail from '../rmcard/RMCardDetail';
+import Loader from '../loader/Loader';
 
 
 
@@ -33,7 +33,9 @@ class Home extends React.Component{
         console.log("aca")
         console.log(characters);
         if(isLoading){
-          return <div>LOADING...</div>
+          return <div>
+            <Loader/>
+            </div>
         } else{
   
         
@@ -44,6 +46,8 @@ class Home extends React.Component{
                   <RMCard className="Big" id= {ch.id} name={ch.name} img= {ch.image} />
                 </Link>
               ))}
+              
+              {document.querySelector("#home").classList.toggle("selected")}
           </section>
           )
         }
