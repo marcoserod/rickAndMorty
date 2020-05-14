@@ -10,8 +10,6 @@ class RMCardDetail extends React.Component{
         this.state = {
             isLoading: true,
             item: {},
-            origin: {},
-
             id: this.props.match.params.id,
         }
       }
@@ -34,8 +32,6 @@ class RMCardDetail extends React.Component{
       render(){   
         const i = this.state.item;
         const l = this.state.isLoading;
-        const o = this.state.origin;
-        console.log(i);
         if (l){
             return <Loader/>
             } else {
