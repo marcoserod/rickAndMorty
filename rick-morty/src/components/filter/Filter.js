@@ -4,7 +4,7 @@ class Filter extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          name: '',
+          name: this.props.name,
           status: this.props.status,
           gender: this.props.gender,  
         };

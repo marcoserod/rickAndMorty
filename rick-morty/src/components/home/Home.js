@@ -14,9 +14,12 @@ class Home extends React.Component{
         characters: [],
         isLoading: true,
         selectedStatus: '',
-        selectedGender: '',     
+        selectedGender: '',
+        enteredName: '',
+        error: false,
+        errorMSG: '',
+        }    
       }  
-    }
     
     componentDidMount(){
       fetch('https://rickandmortyapi.com/api/character/')
@@ -35,26 +38,37 @@ class Home extends React.Component{
           isLoading: true,
           selectedStatus: status,
           selectedGender: gender,
+          enteredName: name
         })
         fetch(`https://rickandmortyapi.com/api/character/?status=${status}&gender=${gender}&name=${name}`)
-          .then(res => res.json())
-          .then(json => {
-            this.setState({
-              isLoading: false,
-              characters: json.results,
-            })
-          })
-      }
-
+          .then(res => 
+            {if (res.status !== 200){
+              console.log(res.error);
+              this.setState({
+                error: true,
+              })
+            }else {
+              res.json().then(json => {this.setState({isLoading: false, characters: json.results})})          
+        }
+      })
+    }   
 
   
       render(){        
-        var {isLoading, characters} = this.state;
+        var {isLoading, characters, error, errorMSG} = this.state;
+        if(error){
+          return (
+          <div id="nothingHere">
+            <p>No results have been found, please, refresh and try again</p>
+          </div>
+          )
+        }
         if(isLoading){
           return <div>
             <Loader/>
             </div>
-        } else{      
+        }
+        else{      
           return(
           <section>
             {document.querySelector("#home").classList.add("selected")}
