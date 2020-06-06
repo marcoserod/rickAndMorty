@@ -6,9 +6,11 @@ import './RMCard.css';
   class RMCard extends Component {
       render(){
           return(
-            <div className="Card">
-              <h1 className="Card-Name">{this.props.name}</h1>
-              <img className="Card-Img" src={this.props.img} alt={this.props.name}/>
+            <div className="card My-Card text-white">
+              <img className="card-img-top" src={this.props.img} alt={this.props.name}/>
+              <div class="card-body">
+                <h5 className="card-title">{this.props.name}</h5>
+              </div>              
             </div>
           ) 
       };

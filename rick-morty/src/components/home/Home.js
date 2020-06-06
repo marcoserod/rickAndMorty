@@ -70,14 +70,14 @@ class Home extends React.Component{
         }
         else{      
           return(
-          <section>
+          <section className="App-Home container-fluid">
             {document.querySelector("#home").classList.add("selected")}
             <Filter 
               name={this.state.enteredName}
               gender={this.state.selectedGender}
               status={this.state.selectedStatus}
               handleSubmit={this.handleSubmit}/>
-            <div className="App">
+            <div className="row justify-content-around">
                 {characters.map((ch) => (
                   <Link to={`/${ch.id}`}>
                     <RMCard key={ch.id} className="Big"  id= {ch.id} name={ch.name} img= {ch.image} />

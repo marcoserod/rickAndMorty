@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/home/Home'
 import Header from './components/header/Header'
 import RMCardDetail from './components/rmcard/RMCardDetail'
+import About from './components/about/About'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,8 +19,9 @@ class App extends React.Component{
             <Header text="The Rick and Morty" />
               <Switch>
                 <Route path="/" exact component={Home}/>
+                <Route path="/About" exact component={About}/>
                 <Route path="/:id" exact component={RMCardDetail}/>
-              </Switch>
+              </Switch>  
           </Router>
         )
       }

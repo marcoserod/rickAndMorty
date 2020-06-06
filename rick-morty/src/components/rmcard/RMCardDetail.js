@@ -37,50 +37,20 @@ class RMCardDetail extends React.Component{
             } else {
                 return(
                 
-                <section className = "RMCardDetail">
-                    
-                    <div>
-                        <RMCard id= {i.id} name={i.name} img= {i.image}/>
-                    </div>
-                    
-                    <div>
-                        <table className = "RMCardDetail-Table">
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>{i.id}</td>
-                                </tr>
-                                <tr>
-                                    <td>name</td>
-                                    <td>{i.name}</td>
-                                </tr>
-                                <tr>
-                                    <td>status</td>
-                                    <td>{i.status}</td>
-                                </tr>
-                                <tr>
-                                    <td>species</td>
-                                    <td>{i.species}</td>
-                                </tr>
-                                <tr>
-                                    <td>type</td>
-                                    <td>{i.type}</td>
+                <section className = "App-Home container-fluid Card-Detail row justify-content-center align-items-start">
 
-                                </tr>
-                                <tr>
-                                    <td>gender</td>
-                                    <td>{i.gender}</td>
-                                </tr>
-                                <tr>
-                                    <td>origin</td>
-                                    <td>{i.origin.name}</td>
-                                </tr>
-                                <tr>
-                                    <td>location</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>    
-                        </table>
+                    <RMCard className="My-Card-Detail" id= {i.id} name={i.name} img= {i.image}/>
+                    
+                    <div class="card" >
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">id: {i.id}</li>
+                            <li class="list-group-item">status: {i.status}</li>
+                            <li class="list-group-item">species: {i.species}</li>
+                            <li class="list-group-item">type: {i.type}</li>
+                            <li class="list-group-item">gender: {i.gender}</li>
+                            <li class="list-group-item">origin: {i.origin.name}</li>
+                            <li class="list-group-item">location: {i.location.name}</li>
+                        </ul>
                     </div>
                     {document.querySelector("#home").classList.remove("selected")}
                     {document.querySelector("#chdetail").classList.add("selected")}
