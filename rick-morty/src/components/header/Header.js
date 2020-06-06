@@ -5,25 +5,32 @@ import Filter from "../filter/Filter";
 
 const Header = (props) => {
   return (
-    
-    <header className="App-header">
-      <div id="App-header-tittle">
-        <img id="logox" src="https://png2.cleanpng.com/sh/3911f04affa1398ceead01bec619b1cb/L0KzQYm3VMA1N6Fuj5H0aYP2gLBuTgBweqVmhJ92b4L3iX76jfl1cF53gdV0LYPkfrTvhgoufF54gNt7dD3rf7FrifUueJD3jNN1LUXkc4XpUPNjbWNnetYALkS8SIW9VcQxOWY3Sqo8OUe4RYq5WMcveJ9s/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png"/>
-        <h1 id="header">The Rick & Morty</h1>
-        <img id="logox" src="https://png2.cleanpng.com/sh/3911f04affa1398ceead01bec619b1cb/L0KzQYm3VMA1N6Fuj5H0aYP2gLBuTgBweqVmhJ92b4L3iX76jfl1cF53gdV0LYPkfrTvhgoufF54gNt7dD3rf7FrifUueJD3jNN1LUXkc4XpUPNjbWNnetYALkS8SIW9VcQxOWY3Sqo8OUe4RYq5WMcveJ9s/kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png"/>
+    <nav id="NavHeader" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <Link to="/">
+        <a class="navbar-brand" href="#">The Rick & Morty</a>
+      </Link>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li className="nav-item active">
+          <Link to="/">
+            <a className="nav-link" id="home" href="#">Home <span class="sr-only">(current)</span></a>
+          </Link>
+          </li>
+          <Link to={`${useLocation().pathname}`}>
+            {useLocation().pathname !== "/" ?
+            <li className="nav-item"> <a className="nav-link" id="chdetail">Character Detail</a> </li> : <li></li>}
+          </Link>
+          
+            <li className="nav-item"> <Link to="/About"><a className="nav-link"> About </a> </Link></li>
+
+          
+          
+        </ul>
       </div>
-      <ul className="App-header-links">
-        <Link to="/">
-          <li id="home">HOME</li>
-        </Link>
-        <Link to={`${useLocation().pathname}`}>
-          {useLocation().pathname !== "/" ?
-          <li id="chdetail">CHARACTER DETAIL</li> : <li></li>}
-          {console.log("path")}
-          {console.log(useLocation().pathname)}
-        </Link>
-      </ul>
-    </header>
+    </nav>
   );
 };
 

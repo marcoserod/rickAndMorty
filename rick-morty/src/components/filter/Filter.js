@@ -31,18 +31,18 @@ class Filter extends React.Component{
     
       render() {
         return (
-          <form className="Filters" onSubmit={this.handleSubmit.bind(this)}>
-            <label>
+          <form className="form-group row justify-content-center " onSubmit={this.handleSubmit.bind(this)}>
               <input 
                 type="text"
                 id="search"
+                className="form-control"
                 placeholder="Search"
                 name="name"
                 value={this.state.name}                
                 onChange={this.handleFiltering}
                 />
               <select 
-                className="select-css"
+                className="custom-select"
                 id="status"
                 name="status"
                 value={this.state.status} 
@@ -53,7 +53,7 @@ class Filter extends React.Component{
                 <option value="unknown">unknown</option>
               </select>
               <select 
-                className="select-css"
+                className="custom-select"
                 id="gender"
                 name="gender"
                 value={this.state.gender} 
@@ -64,8 +64,7 @@ class Filter extends React.Component{
                 <option value="genderless">genderless</option>
                 <option value="unknown">unknown</option>
               </select>
-            </label>
-              <input id="goBtn" type="submit" value="Go"/>
+              <input className="btn btn-primary" type="submit" value="Go"/>
           </form>
         );
       }      
