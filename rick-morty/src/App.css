@@ -1,7 +1,15 @@
-.pic{
-  border-radius: 10% !important;
+
+
+.route-wrapper {
+  position: relative;
+ 
 }
 
+.route-wrapper > div {
+  position: absolute;
+  left: 0em;
+  width: 100vmax;
+}
 
 #NavHeader{
   min-height: 7vh;
@@ -10,11 +18,9 @@
 .App-Home{
   background-color: rgb(32, 35, 41);
   min-height: 93vh;
+  min-width: 100vw;
 }
 
-.Card-Detail{
-  
-}
 
 .card{
   max-width: 360px;
@@ -49,78 +55,10 @@
 
 
 
-.App *{
-  text-decoration: none;
-}
-
-.App-header {
-  height: 10vh;
-  display: flex;
-  width: 100vh;
-  display: flex;
-  background-color: #EEEFF2;
-  width: 100%;
-
-  box-sizing: border-box;
-  align-items: center;
-  padding: 0px 1rem 0px 1rem;
-}
-
-#App-header-tittle{
-  display: flex;
-  flex-direction: row;
-  margin: 0px 1rem 0px 1rem;
-}
-
-#logox{
-  height: 3rem;
-  margin: 1rem 0px 1rem 0px;
-}
-
-#header{
-  margin: 1rem 0px 1rem 0px;
-}
-
-
-.App-header-links{
-  margin: 1rem;
-  display: flex;
-  
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  color: black;
-  
-}
-
-.App-header-links *{
-  text-decoration: none;
-  font-size: 1.2em;
-  box-sizing: border-box;
-  transition: all 0.1s;
-  margin-left: 2%;
-  
-}
-.App-header-links *:visited{
-  color:Black;
-}
-
-.App-header-links *:hover{
-  
-  color: orange;
-  
-}
-
-.App-header-links *:focus{
-  
-  color: orange;
-  
-}
-
 
 .selected{
-  color: orange;
-  font-weight: bold;
+  font-weight: bold !important;
+
 }
 
 
@@ -161,7 +99,7 @@
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 93vh;
 }
 
 @media (max-width: 600px) {

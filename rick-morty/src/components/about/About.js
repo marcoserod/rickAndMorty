@@ -4,9 +4,10 @@ function About(props) {
     return (
         <section className="container">
             <div className="card mb-3">
-                <div className="row no-gutters ">
+                <div className="row ">
                     <div className="col-md-4">
-                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQE3zjE9_vYFmA/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=i9YqJaRlA_1nc0w0df2fVOySbGpZXP3XbwvyiBsl1ys" className="card-img col-lg pic" alt="ss"/>
+                        <img 
+                        src="https://media-exp1.licdn.com/dms/image/C4E03AQE3zjE9_vYFmA/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=i9YqJaRlA_1nc0w0df2fVOySbGpZXP3XbwvyiBsl1ys" className="card-img rounded-circle m-auto" alt="ss"/>
                     </div>
                     <div className="col-md-8 ">
                     <div className="card-body">

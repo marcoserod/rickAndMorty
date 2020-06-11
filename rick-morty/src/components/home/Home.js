@@ -71,7 +71,6 @@ class Home extends React.Component{
         else{      
           return(
           <section className="App-Home container-fluid">
-            {document.querySelector("#home").classList.add("selected")}
             <Filter 
               name={this.state.enteredName}
               gender={this.state.selectedGender}
