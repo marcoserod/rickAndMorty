@@ -39,11 +39,11 @@ class RMCardDetail extends React.Component{
                 
                 <section 
                 style={{margin: "0rem"}}
-                className = "App-Home container-fluid row justify-content-center align-items-start">
+                className = "container-fluid row justify-content-center align-items-start">
 
                     <RMCard className="My-Card-Detail" id= {i.id} name={i.name} img= {i.image}/>
                     
-                    <div class="card" >
+                    <div style={{minHeight: "376px"}} class="card" >
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">id: {i.id}</li>
                             <li class="list-group-item">status: {i.status}</li>

@@ -17,12 +17,16 @@ class App extends React.Component{
         return(
           <Router>
             <Header text="The Rick and Morty" />
-              <Switch>
-                
+              <AnimatedSwitch
+                atEnter={{ opacity: 0 }}
+                atLeave={{ opacity: 0 }}
+                atActive={{ opacity: 1 }}
+                className="route-wrapper"
+              >                
                   <Route path="/" exact component={Home}/>
                   <Route path="/About" exact component={About}/>
                   <Route path="/:id" exact component={RMCardDetail}/>
-              </Switch>
+              </AnimatedSwitch>
           </Router>
         )
       }

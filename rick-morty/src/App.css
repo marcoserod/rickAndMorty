@@ -1,5 +1,9 @@
 
-
+#root{
+  background-color: rgb(32, 35, 41);
+  min-height: 100vh;
+  overflow-x: hidden
+}
 .route-wrapper {
   position: relative;
  
@@ -7,10 +11,13 @@
 
 .route-wrapper > div {
   position: absolute;
-  left: 0em;
-  width: 100vmax;
+  width: 100vw;
+
 }
 
+.container-fluid{
+  background-color: rgb(32, 35, 41);
+}
 #NavHeader{
   min-height: 7vh;
 }
@@ -31,6 +38,7 @@
 .My-Card{
   background-color:  rgb(60, 62, 68) !important;
   padding: 0rem !important;
+  min-height: 380px;
 }
 
 /* .My-Card-Detail{

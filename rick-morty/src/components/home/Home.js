@@ -70,7 +70,7 @@ class Home extends React.Component{
         }
         else{      
           return(
-          <section className="App-Home container-fluid">
+          <section className="container-fluid">
             <Filter 
               name={this.state.enteredName}
               gender={this.state.selectedGender}
