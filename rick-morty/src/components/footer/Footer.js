@@ -7,10 +7,12 @@ const Footer = (props) => {
         <div 
         className="footer fixed-bottom container-fluid d-flex justify-content-center">
             
-            <a href='https://github.com/marcoserod' target="_blank">
+            <a href='https://github.com/marcoserod' target="_blank" rel="noopener noreferrer"
+>
                 <FontAwesomeIcon icon={faGithub}/>
             </a>
-            <a href='https://www.linkedin.com/in/marcos-rodriguez-611512144/' target="_blank">
+            <a href='https://www.linkedin.com/in/marcos-rodriguez-611512144/' target="_blank" rel="noopener noreferrer"
+>
                 <FontAwesomeIcon icon={faLinkedin}/>
             </a>
         </div>

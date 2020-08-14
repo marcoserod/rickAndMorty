@@ -25,6 +25,7 @@ class Home extends React.Component{
       fetch('https://rickandmortyapi.com/api/character/')
         .then(res => res.json())
         .then(json => {
+          console.log(json);
           this.setState({
             isLoading: false,
             characters: json.results,
