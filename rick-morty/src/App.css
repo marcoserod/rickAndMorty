@@ -138,7 +138,6 @@
 /* width */
 ::-webkit-scrollbar {
   width: 0.875rem;
-  border-radius: 10px;
 }
 
 /* Track */
@@ -156,4 +155,68 @@
   background: #555;
 }
 
+.pagination-block{
+  margin: 1rem auto;
+  padding: 0rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #21252950;
+  width: max-content;
+  border-radius: 5px;
+  
 
+}
+
+.pagination-block *{
+  list-style: none;
+}
+
+li.pagination-page, li.pagination-button{
+
+  margin: 0.25rem;
+}
+
+a.pagination-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #EDEEEF;
+  /* border-radius: 50%; */
+  /* font-size: 1rem;
+  height: 2rem;
+  width: 2rem; */
+  /* padding: 0.3rem; */
+  text-decoration: none;
+  color: white;
+  height: 32px;
+  margin: 0 3px;
+  padding: 0 6px;
+  font-size: 0.875rem;
+  min-width: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  border-radius: 16px;
+  letter-spacing: 0.01071em;
+}
+
+a, a:hover, a:focus{
+  text-decoration: none !important;
+  color: white !important;
+
+}
+
+.pagination-page-active{
+  background-color: #EDEEEF60;
+}
+
+.sticky-top.sticky-offset {
+  top: calc(7vh + 1rem);
+}
+
+.pagination-disabled{
+  display: none;
+}

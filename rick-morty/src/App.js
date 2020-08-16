@@ -12,12 +12,15 @@ import {
 } from "react-router-dom";
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import Footer from './components/footer/Footer';
+import Results from './components/results/Results';
+import { DataProvider } from './contexts/data.context';
 
 class App extends React.Component{
   
     render(){      
         return(
           <Router>
+            <DataProvider>
             <Header text="The Rick and Morty" />
               <AnimatedSwitch
                 atEnter={{ opacity: 0 }}
@@ -25,11 +28,14 @@ class App extends React.Component{
                 atActive={{ opacity: 1 }}
                 className="route-wrapper"
               >                
-                  <Route path="/" exact component={Home}/>
-                  <Route path="/About" exact component={About}/>
-                  <Route path="/:id" exact component={RMCardDetail}/>
+                  <Route exact path="/"  component={Home}/>
+                  <Route exact path="/About"  component={About}/>
+                  <Route exact path="/search"  component={Results}/>
+                  <Route exact path="/:id"  component={RMCardDetail}/>
+                  
               </AnimatedSwitch>
             <Footer/>
+            </DataProvider>
           </Router>
         )
       }

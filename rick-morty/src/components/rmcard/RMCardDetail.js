@@ -43,7 +43,7 @@ class RMCardDetail extends React.Component{
 
                     <RMCard className="My-Card-Detail" id= {i.id} name={i.name} img= {i.image}/>
                     
-                    <div style={{minHeight: "376px"}} class="card" >
+                    <div style={{margin: "1rem",minHeight: "376px"}} clasName="card" >
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">id: {i.id}</li>
                             <li class="list-group-item">status: {i.status}</li>
