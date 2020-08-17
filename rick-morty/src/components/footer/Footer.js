@@ -16,7 +16,7 @@ const Footer = (props) => {
 >
                 <FontAwesomeIcon icon={faLinkedin}/>
             </a>
-            <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=mer.marcosr@gmail.com&su=[Rick+and+Morty+Marcoserod+APP]+Hi+Marcos,+I'm+contacting+you" target="_blank" rel="noopener noreferrer"
+            <a href="mailto:mer.marcosr@gmail.com?subject=[The Rick And Morty APP] Hi Marcos " target="_blank" rel="noopener noreferrer"
 >
                 <FontAwesomeIcon icon={faEnvelope}/>
             </a>
