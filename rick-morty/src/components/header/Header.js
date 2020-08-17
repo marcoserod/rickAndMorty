@@ -7,7 +7,7 @@ import {rm} from '../../assets/rickMortyOk.svg';
 
 const Header = (props) => {
   let pathN = useLocation().pathname;
-  const [smallDevice, setSmallDevice] = useState(window.innerWidt>700)
+  const [smallDevice, setSmallDevice] = useState(window.innerWidth<700)
   let x = window.matchMedia("(min-width: 700px)");
     x.addListener(widthChange);
     function widthChange(x){
