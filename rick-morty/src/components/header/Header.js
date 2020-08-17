@@ -7,14 +7,14 @@ import {rm} from '../../assets/rickMortyOk.svg';
 
 const Header = (props) => {
   let pathN = useLocation().pathname;
-  const [deviceSize, setDeviceSize] = useState(window.innerWidt>700)
+  const [smallDevice, setSmallDevice] = useState(window.innerWidt>700)
   let x = window.matchMedia("(min-width: 700px)");
     x.addListener(widthChange);
     function widthChange(x){
         if  (x.matches){
-          setDeviceSize(true);
+          setSmallDevice(false);
         }else{
-          setDeviceSize(false);
+          setSmallDevice(true);
         }
     }
   let rmLogo = (<svg 
@@ -33,7 +33,7 @@ const Header = (props) => {
       <Link
       className="navbar-brand" 
       to="/">
-      {deviceSize? <div className='d-flex align-items-center'>{rmLogo}<span className='ml-2'>The Rick & Morty</span></div> : rmLogo} 
+      {!smallDevice? <div className='d-flex align-items-center'>{rmLogo}<span className='ml-2'>The Rick & Morty</span></div> : rmLogo} 
       </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@ const Header = (props) => {
           className="nav-item active"
           activeClassName="selected"
           exact to="/">
-            <li className="nav-link">{deviceSize? 'HOME' : <FontAwesomeIcon style={{width:'2rem',fontSize:'2rem'}}icon={faHome}/>}</li>
+            <li className="nav-link">{!smallDevice? 'HOME' : <FontAwesomeIcon style={{width:'2rem',fontSize:'2rem'}}icon={faHome}/>}</li>
           </NavLink>
           <NavLink 
           className="nav-item active"
@@ -56,7 +56,7 @@ const Header = (props) => {
           className="nav-item active"
           activeClassName="selected"
           exact to="/About">
-           <li className="nav-link"> {deviceSize? 'ABOUT' : <FontAwesomeIcon style={{width:'2rem',fontSize:'2rem'}}icon={faInfoCircle}/>} </li>  
+           <li className="nav-link"> {!smallDevice? 'ABOUT' : <FontAwesomeIcon style={{width:'2rem',fontSize:'2rem'}}icon={faInfoCircle}/>} </li>  
           </NavLink>        
           
         </ul>
