@@ -18,7 +18,7 @@ const Results = (props) => {
     let status = query.get("status");
     let gender = query.get("gender");
     const [page, setPage]= useState(parseInt(query.get("page")));
-    const[pageNumber, setPageNumber] = useState((window.innerWidth > window.innerWidth/2)? 8:1);
+    const[pageNumber, setPageNumber] = useState((window.innerWidth > 700)? 8:1);
     const history = useHistory()
 
     let x = window.matchMedia("(min-width: 700px)");
