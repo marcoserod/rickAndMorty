@@ -3,7 +3,6 @@ import {Link, NavLink, useLocation} from 'react-router-dom';
 import Filter from "../filter/Filter";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHome, faInfo, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
-import {rm} from '../../assets/rickMortyOk.svg';
 
 const Header = (props) => {
   let pathN = useLocation().pathname;

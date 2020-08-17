@@ -23,6 +23,7 @@ export async function fetchCharactersFilteringBy(name, gender, status, page, set
         })
         .catch(err => {
             console.log(err.message);
+            console.log(err);
             })
 
 }

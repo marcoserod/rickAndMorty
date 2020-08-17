@@ -177,16 +177,12 @@ li.pagination-page, li.pagination-button{
   margin: 0.25rem;
 }
 
-a.pagination-page{
+
+a.pagination-page, li.pagination-button a{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #EDEEEF;
-  /* border-radius: 50%; */
-  /* font-size: 1rem;
-  height: 2rem;
-  width: 2rem; */
-  /* padding: 0.3rem; */
+  border: 1px solid rgba(255, 255, 255, 0.24);
   text-decoration: none;
   color: white;
   height: 32px;
@@ -207,10 +203,15 @@ a, a:hover, a:focus{
   text-decoration: none !important;
   color: white !important;
 
+
+}
+
+.pagination-block a:hover, .pagination-block a:focus{
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .pagination-page-active{
-  background-color: #EDEEEF60;
+  background-color: rgba(255, 255, 255, 0.24);
 }
 
 .sticky-top.sticky-offset {

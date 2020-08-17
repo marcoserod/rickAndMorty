@@ -1,4 +1,5 @@
 import React from 'react';
+import myPic from '../../assets/myPic.jpg';
 
 function About(props) {
     return (
@@ -9,14 +10,17 @@ function About(props) {
                 <div className="row ">
                     <div className="col-md-3">
                         <img 
-                        src="https://media-exp1.licdn.com/dms/image/C4E03AQE3zjE9_vYFmA/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=i9YqJaRlA_1nc0w0df2fVOySbGpZXP3XbwvyiBsl1ys" 
+                        style={{
+                            transform: "rotate(15deg)"
+                        }}
+                        src={myPic}
                         className="card-img rounded-circle m-auto" 
                         alt="Marcos's picture"/>
                     </div>
                     <div className="col-md-8 d-flex align-items-center">
                     <div className="card-body">
                         <h5 className="card-title">Hi! I'm Marcos!</h5>
-                        <p className="card-text">I'm a Business Analyst who is on the pursuit of becoming a web developer</p>
+                        <p className="card-text">A Business Analyst who is on the pursuit of becoming a front-end web developer</p>
                         <p className="card-text"><small className="text-muted">Thanks for visiting my app</small></p>
                     </div>
                     </div>

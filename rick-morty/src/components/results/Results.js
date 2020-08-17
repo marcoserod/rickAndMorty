@@ -6,7 +6,7 @@ import RMCard from '../rmcard/RMCard';
 import Loader from '../loader/Loader';
 import ReactPaginate from 'react-paginate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import  {faChevronCircleLeft,faChevronCircleRight} from '@fortawesome/free-solid-svg-icons'
+import  {faChevronLeft,faChevronRight} from '@fortawesome/free-solid-svg-icons'
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -32,6 +32,11 @@ const Results = (props) => {
     }
     
     useEffect(()=>{
+        document.getElementById('root').scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
         fetchCharactersFilteringBy(name, gender, status, page, setData); 
         window.history.replaceState(page,'Updating',`search?status=${status}&gender=${gender}&name=${name}&page=${page}` );
         history.location = window.history;
@@ -40,7 +45,7 @@ const Results = (props) => {
 
     const handlePageClick = (arg) =>{
         let selectedPage = arg.selected;
-        setPage(selectedPage+1);
+        setPage(selectedPage+1)
 
     } 
 
@@ -50,8 +55,8 @@ const Results = (props) => {
                 {data.info.pages===1?null:
                 <ReactPaginate
                 disabledClassName="pagination-disabled"
-                previousLabel={<FontAwesomeIcon style={{fontSize: "2rem"}} icon={faChevronCircleLeft}/>}
-                nextLabel={<FontAwesomeIcon style={{fontSize: "2rem"}} icon={faChevronCircleRight}/>}
+                previousLabel={<FontAwesomeIcon style={{fontSize: "0.7rem"}} icon={faChevronLeft}/>}
+                nextLabel={<FontAwesomeIcon style={{fontSize: "0.7rem"}} icon={faChevronRight}/>}
                 disableInitialCallback = {true}
                 activeLinkClassName="pagination-page-active"
                 containerClassName="pagination-block sticky-top sticky-offset d-flex"
