@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {Link, useLocation, useHistory, withRouter,} from 'react-router-dom';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 import {DataContext} from '../../contexts/data.context';
 import { fetchCharactersFilteringBy } from '../../services/data';
 import RMCard from '../rmcard/RMCard';
@@ -14,15 +14,12 @@ function useQuery() {
 const Results = (props) => {
     const {data, setData} = useContext(DataContext);
     let query = useQuery(); 
-    let URLname = query.get("name") || '';
-    let status = query.get("status") ||'' ;
-    let gender = query.get("gender") ||'';
+    let name = query.get("name");
+    let status = query.get("status");
+    let gender = query.get("gender");
     const [page, setPage]= useState(parseInt(query.get("page")));
     const[pageNumber, setPageNumber] = useState((window.innerWidth > 700)? 8:1);
     const history = useHistory()
-    const [name] = useState(URLname); 
-    
-   
 
     let x = window.matchMedia("(min-width: 700px)");
     x.addListener(widthChange);
@@ -35,7 +32,6 @@ const Results = (props) => {
     }
     
     useEffect(()=>{
-        console.log(name, status, gender);
         document.getElementById('root').scrollTo({
                 top: 0,
                 left: 0,
@@ -45,7 +41,7 @@ const Results = (props) => {
         window.history.replaceState(page,'Updating',`search?status=${status}&gender=${gender}&name=${name}&page=${page}` );
         history.location = window.history;
         console.log('renderizadoooooooooo')
-    }, [page,name])
+    }, [page])
 
     const handlePageClick = (arg) =>{
         let selectedPage = arg.selected;
@@ -61,7 +57,7 @@ const Results = (props) => {
                 disabledClassName="pagination-disabled"
                 previousLabel={<FontAwesomeIcon style={{fontSize: "0.7rem"}} icon={faChevronLeft}/>}
                 nextLabel={<FontAwesomeIcon style={{fontSize: "0.7rem"}} icon={faChevronRight}/>}
-                disableInitialCallback = {false}
+                disableInitialCallback = {true}
                 activeLinkClassName="pagination-page-active"
                 containerClassName="pagination-block sticky-top sticky-offset d-flex"
                 pageClassName= "pagination-page"
@@ -94,4 +90,4 @@ const Results = (props) => {
     )
 }
 
-export default withRouter(Results);
+export default Results;

@@ -1,18 +1,27 @@
 import React from 'react';
+import myPic from '../../assets/myPic.jpg';
 
 function About(props) {
     return (
-        <section className="container">
-            <div className="card mb-3">
-                <div className="row no-gutters">
-                    <div className="col-md-4">
-                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQE3zjE9_vYFmA/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=i9YqJaRlA_1nc0w0df2fVOySbGpZXP3XbwvyiBsl1ys" className="card-img col-lg pic" alt="ss"/>
+        <section 
+        className="container-fluid d-flex justify-content-center">
+
+            <div className="card col-md-9 d-flex ">
+                <div className="row ">
+                    <div className="col-md-3">
+                        <img 
+                        style={{
+                            transform: "rotate(15deg)"
+                        }}
+                        src={myPic}
+                        className="card-img rounded-circle m-auto" 
+                        alt="Marcos's picture"/>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 d-flex align-items-center">
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 className="card-title">Hi! I'm Marcos!</h5>
+                        <p className="card-text">A Business Analyst who is on the pursuit of becoming a front-end web developer</p>
+                        <p className="card-text"><small className="text-muted">Thanks for visiting my app</small></p>
                     </div>
                     </div>
                 </div>

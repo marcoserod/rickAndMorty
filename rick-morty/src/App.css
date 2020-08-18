@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-.pic{
-  border-radius: 10% !important;
-=======
 @import '../src/components/footer/Footer.css';
-@import '../src/components//search//Search.css';
+@import '../src/components/search/Search.css';
 
 #root{
   background-color: rgb(32, 35, 41);
@@ -13,10 +9,17 @@
 .route-wrapper {
   position: relative;
  
->>>>>>> Stashed changes
 }
 
+.route-wrapper > div {
+  position: absolute;
+  width: 100vw;
 
+}
+
+.container-fluid{
+  background-color: rgb(32, 35, 41);
+}
 #NavHeader{
   min-height: 7vh;
 }
@@ -24,11 +27,9 @@
 .App-Home{
   background-color: rgb(32, 35, 41);
   min-height: 93vh;
+  min-width: 100vw;
 }
 
-.Card-Detail{
-  
-}
 
 .card{
   max-width: 360px;
@@ -39,6 +40,7 @@
 .My-Card{
   background-color:  rgb(60, 62, 68) !important;
   padding: 0rem !important;
+  min-height: 380px;
 }
 
 /* .My-Card-Detail{
@@ -60,7 +62,6 @@
   padding: 2rem 1rem 1rem 1rem;
   margin: 0px !important;
 }
-
 
 
 .App *{
@@ -86,62 +87,9 @@
   margin: 0px 1rem 0px 1rem;
 }
 
-<<<<<<< Updated upstream
-#logox{
-  height: 3rem;
-  margin: 1rem 0px 1rem 0px;
-}
-
-#header{
-  margin: 1rem 0px 1rem 0px;
-}
-
-
-.App-header-links{
-  margin: 1rem;
-  display: flex;
-  
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  color: black;
-  
-}
-
-.App-header-links *{
-  text-decoration: none;
-  font-size: 1.2em;
-  box-sizing: border-box;
-  transition: all 0.1s;
-  margin-left: 2%;
-  
-}
-.App-header-links *:visited{
-  color:Black;
-}
-
-.App-header-links *:hover{
-  
-  color: orange;
-  
-}
-
-.App-header-links *:focus{
-  
-  color: orange;
-  
-}
-
-
-.selected{
-  color: orange;
-  font-weight: bold;
-=======
 .selected{
   font-weight: bold !important;
->>>>>>> Stashed changes
 }
-
 .selected svg {
   color: #EDEEEF80;
 }
@@ -183,7 +131,7 @@
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 93vh;
 }
 
 @media (max-width: 600px) {
@@ -217,13 +165,11 @@
   
 }
 
-<<<<<<< Updated upstream
-=======
-
 /* width */
 ::-webkit-scrollbar {
   width: 0.875rem;
 }
+
 
 /* Track */
 ::-webkit-scrollbar-track {
@@ -256,11 +202,8 @@
 .pagination-block *{
   list-style: none;
 }
->>>>>>> Stashed changes
 
 
-<<<<<<< Updated upstream
-=======
 .pagination-disabled{
   display: none;
 }
@@ -269,4 +212,86 @@ ul li.nav-link{
   margin-right: 1rem;
   margin-left:0rem;
 }
->>>>>>> Stashed changes
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pagination-block{
+  margin: 1rem auto;
+  padding: 0rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #21252950;
+  width: max-content;
+  border-radius: 5px;
+  
+
+}
+
+.pagination-block *{
+  list-style: none;
+}
+
+li.pagination-page, li.pagination-button{
+
+  margin: 0.25rem;
+}
+
+
+a.pagination-page, li.pagination-button a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  text-decoration: none;
+  color: white;
+  height: 32px;
+  margin: 0 3px;
+  padding: 0 6px;
+  font-size: 0.875rem;
+  min-width: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  border-radius: 16px;
+  letter-spacing: 0.01071em;
+}
+
+a, a:hover, a:focus{
+  text-decoration: none !important;
+  color: white !important;
+
+
+}
+
+.pagination-block a:hover, .pagination-block a:focus{
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.pagination-page-active{
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+.sticky-top.sticky-offset {
+  top: calc(7vh + 1rem);
+}
+
+.pagination-disabled{
+  display: none;
+}

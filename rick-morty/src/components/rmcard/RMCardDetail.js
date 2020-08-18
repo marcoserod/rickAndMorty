@@ -37,11 +37,13 @@ class RMCardDetail extends React.Component{
             } else {
                 return(
                 
-                <section className = "App-Home container-fluid Card-Detail row justify-content-center align-items-start">
+                <section 
+                style={{margin: "0rem"}}
+                className = "container-fluid row justify-content-center align-items-start">
 
                     <RMCard className="My-Card-Detail" id= {i.id} name={i.name} img= {i.image}/>
                     
-                    <div class="card" >
+                    <div style={{margin: "1rem",minHeight: "376px"}} clasName="card" >
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">id: {i.id}</li>
                             <li class="list-group-item">status: {i.status}</li>
@@ -52,8 +54,7 @@ class RMCardDetail extends React.Component{
                             <li class="list-group-item">location: {i.location.name}</li>
                         </ul>
                     </div>
-                    {document.querySelector("#home").classList.remove("selected")}
-                    {document.querySelector("#chdetail").classList.add("selected")}
+                  
                 </section>
                 )
             }
