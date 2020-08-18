@@ -16,12 +16,15 @@ class App extends React.Component{
     render(){      
         return(
           <Router>
+
+            <DataProvider>
             <Header text="The Rick and Morty" />
               <Switch>
                 <Route path="/" exact component={Home}/>
                 <Route path="/About" exact component={About}/>
                 <Route path="/:id" exact component={RMCardDetail}/>
               </Switch>  
+            </DataProvider>
           </Router>
         )
       }

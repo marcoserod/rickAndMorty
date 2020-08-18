@@ -1,6 +1,10 @@
 import React from 'react';
 import RMCard from '../rmcard/RMCard';
+<<<<<<< Updated upstream
 import {Link, useLocation} from 'react-router-dom';
+=======
+import {Link, useLocation, useHistory, withRouter} from 'react-router-dom';
+>>>>>>> Stashed changes
 import Loader from '../loader/Loader';
 import Filter from '../filter/Filter';
 
@@ -91,4 +95,4 @@ class Home extends React.Component{
   }
   
 
-  export default Home;
+  export default withRouter(Home);

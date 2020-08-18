@@ -1,5 +1,19 @@
+<<<<<<< Updated upstream
 .pic{
   border-radius: 10% !important;
+=======
+@import '../src/components/footer/Footer.css';
+@import '../src/components//search//Search.css';
+
+#root{
+  background-color: rgb(32, 35, 41);
+  min-height: 100vh;
+  overflow-x: hidden
+}
+.route-wrapper {
+  position: relative;
+ 
+>>>>>>> Stashed changes
 }
 
 
@@ -72,6 +86,7 @@
   margin: 0px 1rem 0px 1rem;
 }
 
+<<<<<<< Updated upstream
 #logox{
   height: 3rem;
   margin: 1rem 0px 1rem 0px;
@@ -121,8 +136,15 @@
 .selected{
   color: orange;
   font-weight: bold;
+=======
+.selected{
+  font-weight: bold !important;
+>>>>>>> Stashed changes
 }
 
+.selected svg {
+  color: #EDEEEF80;
+}
 
 .Loading{
   fill:white;
@@ -185,8 +207,66 @@
   .btn{
     align-self: center;
   }
-  
+
+  /* width */
+::-webkit-scrollbar {
+  width: 0.1rem;
 }
 
 
+  
+}
 
+<<<<<<< Updated upstream
+=======
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.875rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pagination-block{
+  margin: 1rem auto;
+  padding: 0rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #21252950;
+  width: max-content;
+  border-radius: 5px;
+  
+
+}
+
+.pagination-block *{
+  list-style: none;
+}
+>>>>>>> Stashed changes
+
+
+<<<<<<< Updated upstream
+=======
+.pagination-disabled{
+  display: none;
+}
+
+ul li.nav-link{
+  margin-right: 1rem;
+  margin-left:0rem;
+}
+>>>>>>> Stashed changes
