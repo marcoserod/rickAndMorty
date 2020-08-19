@@ -22,9 +22,9 @@ const Search = (props) =>{
         e.preventDefault();
         history.push(`/search?${urlGenerator(status,gender,inputSearch)}&page=1`);
         setInputSearch('');
-        if (history.location.pathname === '/search'){
-            window.location.reload();
-        }
+        // if (history.location.pathname === '/search'){
+        //     window.location.reload();
+        // }
     }
 
     const urlGenerator = () => {
