@@ -12,7 +12,7 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 const Results = (props) => {
-    const {data, setData} = useContext(DataContext);
+    const [data, setData] = useState(null);
     const {error, setError} = useContext(ErrorContext);
     let query = useQuery(); 
     let name = query.get("name");
@@ -59,7 +59,7 @@ const Results = (props) => {
             <p>No results have been found, please, try searching another thing</p>
         </div>
         :
-        (data!==null)? 
+        data? 
         <section style={{marginBottom:"3rem"}} className="container-fluid">
                 {data.info.pages===1?null:
                 <ReactPaginate

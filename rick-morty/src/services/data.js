@@ -7,7 +7,6 @@ const BASE_URL = 'https://rickandmortyapi.com/api/'
 export async function fetchAllCharacters(r1,r2,r3,setData){
     await axios.get(`${BASE_URL}character/${r1},${r2},${r3}`)
         .then(res => {
-            console.log(res.data);
             setData(res.data);
             return res.data;
            
