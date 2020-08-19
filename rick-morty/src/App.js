@@ -7,20 +7,21 @@ import About from './components/about/About';
 import 'bootstrap';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
+  Route
 } from "react-router-dom";
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import Footer from './components/footer/Footer';
 import Results from './components/results/Results';
 import { DataProvider } from './contexts/data.context';
 
+
 class App extends React.Component{
   
     render(){      
         return(
           <Router>
-            <DataProvider>
+
+          <DataProvider>
             <Header text="The Rick and Morty" />
               <AnimatedSwitch
                 atEnter={{ opacity: 0 }}
