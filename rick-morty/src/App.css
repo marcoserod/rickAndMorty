@@ -109,7 +109,7 @@
 }
 
 #gender{
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 #search{
@@ -294,4 +294,26 @@ a, a:hover, a:focus{
 
 .pagination-disabled{
   display: none;
+}
+
+div.d-flex .my-custom-selector{
+  color: #EEEFF2;
+  border: 1px solid #EEEFF2;
+  border-radius: 5px;
+  background: none;
+  padding: 0.25rem;
+  min-width: calc(150px - 0.25rem);
+
+  
+
+}
+
+.my-custom-selector option{
+  color: black;
+}
+
+@media (max-width: 989px){
+ #gender{
+   margin-right: 0rem;
+ }
 }

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {Link, NavLink, useLocation} from 'react-router-dom';
 import Filter from "../filter/Filter";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHome, faInfo, faInfoCircle, faFileExcel} from '@fortawesome/free-solid-svg-icons';
 import Search from "../search/Search";
+import { DataContext } from "../../contexts/data.context";
 
 
 const Header = (props) => {
+  const {data} =useContext(DataContext);
   let pathN = useLocation().pathname;
   const [smallDevice, setSmallDevice] = useState(window.innerWidth<990)
   let x = window.matchMedia("(min-width: 990px)");
@@ -34,7 +36,10 @@ const Header = (props) => {
     <nav id="NavHeader" className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <Link
       className="navbar-brand" 
-      to="/">
+      to={{
+        pathname:"/"
+      }
+        }>
       {!smallDevice? <div className='d-flex align-items-center'>{rmLogo}<span className='ml-2'>The Rick & Morty</span></div> : rmLogo} 
       </Link>
       {smallDevice? <Search className="custom-search"/>:null}
