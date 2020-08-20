@@ -12,9 +12,11 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 const Results = (props) => {
-    const [data, setData] = useState(null);
+    // const [data, setData] = useState(null);
+    const {data, setData} =useContext(DataContext);
     const {error, setError} = useContext(ErrorContext);
     let query = useQuery(); 
+    let search = useLocation().search;
     let name = query.get("name");
     let status = query.get("status");
     let gender = query.get("gender");
@@ -35,7 +37,7 @@ const Results = (props) => {
     }
     
     useEffect(()=>{
-        setData(null);
+        debugger;
         document.getElementById('root').scrollTo({
                 top: 0,
                 left: 0,
@@ -44,8 +46,11 @@ const Results = (props) => {
         fetchCharactersFilteringBy(name, innerGender, innerStatus, page, setData, setError); 
         window.history.replaceState(page,'Updating',`search?status=${innerStatus}&gender=${innerGender}&name=${name? name:''}&page=${page}` );
         history.location = window.history;
-        console.log('renderizadoooooooooo')
-    }, [page,innerStatus, innerGender])
+
+        return function cleanup(){
+            setData(null);
+          }
+    }, [page,innerStatus, innerGender,search])
 
     const handlePageClick = (arg) =>{
         let selectedPage = arg.selected;
@@ -80,7 +85,7 @@ const Results = (props) => {
                 onPageChange={handlePageClick}/>
                 }
                     <div className={`container-fluid mt-3 d-flex ${pageNumber>1?'justify-content-end'
-                    :'justify-content-center p-0 ml-n3 flex-wrap'}`}>   
+                    :'justify-content-center p-0 ml-n2 flex-wrap'}`}>   
                         <p
                         style={{
                             color:"white",
@@ -111,8 +116,8 @@ const Results = (props) => {
                         </select>
 
                 </div>
-                <div className={`container-fluid d-flex wrap flex-wrap pl-0 pr-0 ml-n3
-                ${pageNumber>1? 'justify-content-between':'justify-content-center'}`}>
+                <div className={`container-fluid d-flex wrap flex-wrap pl-0 pr-0  
+                ${pageNumber>1? 'ml-n3 justify-content-between':'ml-n2 justify-content-center'}`}>
                 
                     {data.results.map((ch) => (
                         <Link key={ch.id} to={`/${ch.id}`}>
@@ -139,9 +144,9 @@ const Results = (props) => {
                 onPageChange={handlePageClick}/>
                 }
         </section>
-        :<div>
+        :<>
             <Loader/>
-        </div>
+        </>
 
     )
 }
