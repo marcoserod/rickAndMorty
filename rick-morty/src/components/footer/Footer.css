@@ -1,18 +1,17 @@
-div.footer.fixed-bottom.container-fluid{
-    display:flex;
-    min-height: 2.5rem;
-    background-color: #EDEEEF80;
-    justify-items: center   ;
-    align-items: center;
+div.footer.fixed-bottom.container-fluid {
+  display: flex;
+  min-height: 2.5rem;
+  background-color: #edeeef80;
+  justify-items: center;
+  align-items: center;
 }
 
 div.footer.fixed-bottom.container-fluid a {
-    text-decoration: none;
-    color: inherit;
-    
+  text-decoration: none;
+  color: inherit;
 }
 
-div.footer.fixed-bottom.container-fluid a *{
-    font-size: 1.5rem;
-    margin: 0.5rem ;
+div.footer.fixed-bottom.container-fluid a * {
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }
